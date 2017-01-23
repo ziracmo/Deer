@@ -1,4 +1,4 @@
-<section *ngIf="!isLoading">
+<section *ngIf="!isLoading && champions.length > 0">
     <div id="searchContainer">
         <input id="search" type="search" required (input)="filterList()" [(ngModel)]="searchInput">
         <label for="search"></label>
@@ -6,9 +6,8 @@
 
 
     <div class="row text-center" id="containerChampions">
-        <h6 *ngFor="let champion of filteredList | orderBy" class="col s4 m3">
-            {{champion.name}}
-        </h6>
+        <app-champion-card *ngFor="let champion of filteredList | orderBy" class="col s6 m4" [champion]="champion">
+        </app-champion-card>
     </div>
 </section>
 

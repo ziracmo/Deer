@@ -1,0 +1,26 @@
+.card-panel {
+    background-color: #0b0b0b;
+    border: #4c4c4c solid 1px;
+    color: white;
+    padding: 10px 0 10px 5px;
+}
+
+.champIcon {
+    margin-top: 20px;
+    height: 48px;
+    width: 48px;
+
+}
+
+.card-panel:hover {
+    cursor: pointer;
+    box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.3);
+}
+
+h5{
+    font-size: 20px;
+}
+
+h6 {
+    font-size: 14px;
+}

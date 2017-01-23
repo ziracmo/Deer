@@ -1,12 +1,12 @@
-<div class="card-panel grey lighten-5 z-depth-1">
+<div class="card-panel z-depth-1" *ngIf="champion">
     <div class="row valign-wrapper">
-        <div class="col s2">
-            <!--<img src="images/yuna.jpg" alt="" class="circle responsive-img">-->
+        <div class="col s3 imgContainer">
+            <div id="img{{champion.name}}" class="champIcon">
+            </div>
         </div>
-        <div class="col s10">
-              <span class="black-text">
-                This is a square image. Add the "circle" class to it to make it appear circular.
-              </span>
+        <div class="col s9">
+            <h5>{{champion.name}}</h5>
+            <h6>{{champion.title}}</h6>
         </div>
     </div>
 </div>
