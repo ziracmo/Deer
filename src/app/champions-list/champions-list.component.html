@@ -1,0 +1,9 @@
+<section>
+    <input id="search" type="search" required (input)="filterList()" [(ngModel)]="searchInput">
+    <label for="search"><i class="material-icons">search</i></label>
+    <div class="row">
+        <h5 *ngFor="let champion of filteredList | orderBy" class="col l3">
+            {{champion.key}}
+        </h5>
+    </div>
+</section>
