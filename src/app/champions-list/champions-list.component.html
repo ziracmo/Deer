@@ -1,9 +1,16 @@
-<section>
-    <input id="search" type="search" required (input)="filterList()" [(ngModel)]="searchInput">
-    <label for="search"><i class="material-icons">search</i></label>
-    <div class="row">
-        <h5 *ngFor="let champion of filteredList | orderBy" class="col l3">
-            {{champion.key}}
-        </h5>
+<section *ngIf="!isLoading">
+    <div id="searchContainer">
+        <input id="search" type="search" required (input)="filterList()" [(ngModel)]="searchInput">
+        <label for="search"></label>
+    </div>
+
+
+    <div class="row text-center" id="containerChampions">
+        <h6 *ngFor="let champion of filteredList | orderBy" class="col s4 m3">
+            {{champion.name}}
+        </h6>
     </div>
 </section>
+
+<app-pre-loader *ngIf="isLoading"></app-pre-loader>
+

@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ChampionggApiService} from "../api-services/championgg-api.service";
+import {ApiService} from "../api/championgg-api.service";
 import * as _ from 'lodash';
 
 @Component({
@@ -10,17 +10,23 @@ import * as _ from 'lodash';
 
 export class ChampionsListComponent implements OnInit {
 
+    isLoading: boolean = false;
     champions = [];
     filteredList = []
     searchInput: string;
 
-    constructor(private championggService: ChampionggApiService) {
+    constructor(private championggService: ApiService) {
     }
 
     ngOnInit() {
+        this.isLoading = true;
         this.championggService.getChampions().subscribe(res => {
-            this.champions = res.json()
+            let data = res.json().data
+            _.each(data, (champion) => {
+                this.champions.push(champion)
+            })
             this.filteredList = _.cloneDeep(this.champions);
+            this.isLoading = false;
         })
     }
 
@@ -28,7 +34,7 @@ export class ChampionsListComponent implements OnInit {
         if (this.searchInput !== '', this.searchInput !== null) {
             this.filteredList = [];
             for (let champion of this.champions) {
-                let name = _.upperCase(champion.key);
+                let name = _.upperCase(champion.name);
                 let subString = _.toUpper(this.searchInput);
                 if (_.includes(name, subString)) {
                     this.filteredList.push(champion)

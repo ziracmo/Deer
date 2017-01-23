@@ -8,5 +8,9 @@ body {
     min-height: 100vh;
     background-color: #1b1b1b;
     font-family: 'Nunito Sans', sans-serif;
-    margin-top: 50px;
+    margin-top: 60px;
+}
+
+#appLoader {
+    margin-top: 40vh;
 }

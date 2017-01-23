@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {ChampionggApiService} from "./api-services/championgg-api.service";
+import {ApiService} from "./api/championgg-api.service";
 
 @Component({
   selector: 'app-root',
@@ -10,7 +10,7 @@ export class AppComponent {
 
   champions = [];
 
-  constructor(private service: ChampionggApiService) {
+  constructor(private service: ApiService) {
 
   }
 }

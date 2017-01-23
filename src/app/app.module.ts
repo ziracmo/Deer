@@ -5,27 +5,22 @@ import {HttpModule} from '@angular/http';
 import {MaterializeDirective} from "angular2-materialize";
 
 import {AppComponent} from './app.component';
-import {ChampionggApiService} from "./api-services/championgg-api.service";
-import { ChampionsListComponent } from './champions-list/champions-list.component';
-import { OrderByPipe } from './pipe/order-by.pipe';
-import { HeaderComponent } from './header/header.component';
+import {HeaderComponent} from './header/header.component';
+import {ChampionsListModule} from "./champions-list/champions-list.module";
 
 @NgModule({
     declarations: [
         AppComponent,
         MaterializeDirective,
-        ChampionsListComponent,
-        OrderByPipe,
         HeaderComponent
     ],
     imports: [
         BrowserModule,
         FormsModule,
-        HttpModule
+        HttpModule,
+        ChampionsListModule
     ],
-    providers: [
-        ChampionggApiService
-    ],
+    providers: [],
     bootstrap: [AppComponent]
 })
 export class AppModule {

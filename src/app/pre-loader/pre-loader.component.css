@@ -1,0 +1,12 @@
+#appLoader {
+    width: 400px;
+    margin: 40vh auto 0 auto;
+}
+
+#appLoader.progress {
+    background-color: #d7d7d7;
+}
+
+#appLoader.progress .indeterminate {
+    background-color: #6a6a6a;
+}

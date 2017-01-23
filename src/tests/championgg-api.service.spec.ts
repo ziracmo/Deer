@@ -1,16 +1,16 @@
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, async, inject } from '@angular/core/testing';
-import { ChampionggApiService } from '../app/api-services/championgg-api.service';
+import { ApiService } from '../app/api/championgg-api.service';
 
-describe('ChampionggApiService', () => {
+describe('ApiService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [ChampionggApiService]
+      providers: [ApiService]
     });
   });
 
-  it('should ...', inject([ChampionggApiService], (service: ChampionggApiService) => {
+  it('should ...', inject([ApiService], (service: ApiService) => {
     expect(service).toBeTruthy();
   }));
 });
