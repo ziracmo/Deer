@@ -8,13 +8,15 @@ import {AppComponent} from './app.component';
 import {ChampionggApiService} from "./api-services/championgg-api.service";
 import { ChampionsListComponent } from './champions-list/champions-list.component';
 import { OrderByPipe } from './pipe/order-by.pipe';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         MaterializeDirective,
         ChampionsListComponent,
-        OrderByPipe
+        OrderByPipe,
+        HeaderComponent
     ],
     imports: [
         BrowserModule,
