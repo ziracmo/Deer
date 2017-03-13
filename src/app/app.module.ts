@@ -9,6 +9,7 @@ import {HeaderComponent} from './header/header.component';
 import {ChampionsListModule} from "./champions-list/champions-list.module";
 import {RouterModule} from "@angular/router";
 import {appRoutes} from "./app.routes";
+import {ChampionInfoModule} from "./champion-info/champions-info.module";
 
 @NgModule({
     declarations: [
@@ -21,7 +22,8 @@ import {appRoutes} from "./app.routes";
       BrowserModule,
         FormsModule,
         HttpModule,
-        ChampionsListModule
+        ChampionsListModule,
+        ChampionInfoModule
     ],
     providers: [],
     bootstrap: [AppComponent]

@@ -2,17 +2,13 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
-import {ChampionsListComponent} from "./champions-list.component";
 import {ApiService} from "../api/ddragon-api.service";
-import {OrderByPipe} from "../pipe/order-by.pipe";
 import {PreLoaderModule} from "../pre-loader/pre-loader.module";
-import {ChampionCardComponent} from "./champion-card/champion-card.component";
+import {ChampionInfoComponent} from "./champion-info.component";
 
 @NgModule({
     declarations: [
-        ChampionsListComponent,
-        OrderByPipe,
-        ChampionCardComponent
+        ChampionInfoComponent
     ],
     imports: [
         BrowserModule,
@@ -23,7 +19,7 @@ import {ChampionCardComponent} from "./champion-card/champion-card.component";
     providers: [
         ApiService
     ],
-    exports : [ChampionsListComponent]
+    exports : [ChampionInfoComponent]
 })
-export class ChampionsListModule {
+export class ChampionInfoModule {
 }

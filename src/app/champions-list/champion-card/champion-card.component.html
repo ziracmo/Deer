@@ -1,4 +1,4 @@
-<div class="card-panel z-depth-1" *ngIf="champion">
+<div class="card-panel z-depth-1" *ngIf="champion" (click)="goToChampionInformations()">
     <div class="row valign-wrapper">
         <div class="col s3 imgContainer">
             <div id="img{{champion.name}}" class="champIcon">

@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ApiService} from "../api/championgg-api.service";
+import {ApiService} from "../api/ddragon-api.service";
 import * as _ from 'lodash';
 
 @Component({
