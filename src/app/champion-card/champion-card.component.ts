@@ -11,15 +11,17 @@ export class ChampionCardComponent {
 
     constructor() {
 
-
     }
 
     ngAfterViewInit() {
-        let imgUrl = '../../assets/img/champions/' + this.champion.image.sprite
+        let imgUrl = '../../assets/img/champions/' + this.champion.image.sprite;
         let img = document.getElementById('img' + this.champion.name);
         let backgroundStyle = 'url(' + imgUrl + ') -' + this.champion.image.x + 'px -' + this.champion.image.y + 'px no-repeat';
-        console.log(backgroundStyle)
+        console.log(backgroundStyle);
         img.style.background = backgroundStyle;
+    }
+
+    goToChampionInformations() {
     }
 
 }

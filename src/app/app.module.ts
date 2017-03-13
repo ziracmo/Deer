@@ -7,6 +7,8 @@ import {MaterializeDirective} from "angular2-materialize";
 import {AppComponent} from './app.component';
 import {HeaderComponent} from './header/header.component';
 import {ChampionsListModule} from "./champions-list/champions-list.module";
+import {RouterModule} from "@angular/router";
+import {appRoutes} from "./app.routes";
 
 @NgModule({
     declarations: [
@@ -15,7 +17,8 @@ import {ChampionsListModule} from "./champions-list/champions-list.module";
         HeaderComponent
     ],
     imports: [
-        BrowserModule,
+      RouterModule.forRoot(appRoutes),
+      BrowserModule,
         FormsModule,
         HttpModule,
         ChampionsListModule
