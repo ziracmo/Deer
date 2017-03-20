@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {ApiService} from "../api/ddragon-api.service";
 
 @Component({
@@ -13,22 +13,22 @@ export class ChampionInfoComponent implements OnInit {
   championData;
   isloading: boolean = true;
 
-  constructor(private route: ActivatedRoute, private apiService:ApiService ) {
+  constructor(private activatedRoute: ActivatedRoute, private apiService: ApiService, private route: Router) {
   }
 
   ngOnInit() {
-    this.route.params.subscribe(params => {
+    this.activatedRoute.params.subscribe(params => {
       this.name = params['name'];
-
-      this.apiService.getChampion(this.name).subscribe(res => {
-        this.championData = res.json().data;
-        console.log(this.championData)
-        this.isloading = false;
-      })
+      this.apiService.getChampion(this.name).subscribe(
+        (res) => {
+          this.championData = res.json().data[this.name];
+          console.log(this.championData)
+          this.isloading = false;
+        },
+        (err) => {
+          console.log('Champion request failed : ', err);
+          this.route.navigate(['/'])
+        })
     })
   }
-
-
-
-
 }
