@@ -10,23 +10,25 @@ import {ChampionsListModule} from "./champions-list/champions-list.module";
 import {RouterModule} from "@angular/router";
 import {appRoutes} from "./app.routes";
 import {ChampionInfoModule} from "./champion-info/champions-info.module";
+import {StatsComponent} from "./stats/stats.component";
 
 @NgModule({
-    declarations: [
-        AppComponent,
-        MaterializeDirective,
-        HeaderComponent
-    ],
-    imports: [
-      RouterModule.forRoot(appRoutes),
-      BrowserModule,
-        FormsModule,
-        HttpModule,
-        ChampionsListModule,
-        ChampionInfoModule
-    ],
-    providers: [],
-    bootstrap: [AppComponent]
+  declarations: [
+    AppComponent,
+    MaterializeDirective,
+    HeaderComponent,
+    StatsComponent
+  ],
+  imports: [
+    RouterModule.forRoot(appRoutes),
+    BrowserModule,
+    FormsModule,
+    HttpModule,
+    ChampionsListModule,
+    ChampionInfoModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
 })
 export class AppModule {
 }

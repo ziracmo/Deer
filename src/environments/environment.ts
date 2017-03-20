@@ -4,5 +4,7 @@
 // The list of which env maps to which file can be found in `angular-cli.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  riotKey: 'RGAPI-4f39de3f-1043-4a03-808c-d5446f528e5e',
+  championGGKey: 'd80b4943f31f5b4b122ba14bf4d06afb'
 };

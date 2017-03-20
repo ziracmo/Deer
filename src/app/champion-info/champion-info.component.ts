@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
-import {ApiService} from "../api/ddragon-api.service";
+import {ChampionggService} from "../api/championgg.service";
+
 
 @Component({
   selector: 'app-champion-info',
@@ -15,7 +16,7 @@ export class ChampionInfoComponent implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private apiService: ApiService,
+    private cggService: ChampionggService,
     private route: Router
     ) {
   }
@@ -28,10 +29,11 @@ export class ChampionInfoComponent implements OnInit {
   }
 
   setChampion() {
-    this.apiService.getChampion(this.name).subscribe(
+    this.cggService.getChampion(this.name).subscribe(
       (res) => {
-        this.championData = res.json().data[this.name];
-        // console.log(this.championData)
+        console.log(res.json())
+        this.championData = res.json().data;
+        console.log(this.championData)
         this.isloading = false;
       },
       (err) => {
