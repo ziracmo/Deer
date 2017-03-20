@@ -13,22 +13,30 @@ export class ChampionInfoComponent implements OnInit {
   championData;
   isloading: boolean = true;
 
-  constructor(private activatedRoute: ActivatedRoute, private apiService: ApiService, private route: Router) {
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private apiService: ApiService,
+    private route: Router
+    ) {
   }
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(params => {
       this.name = params['name'];
-      this.apiService.getChampion(this.name).subscribe(
-        (res) => {
-          this.championData = res.json().data[this.name];
-          console.log(this.championData)
-          this.isloading = false;
-        },
-        (err) => {
-          console.log('Champion request failed : ', err);
-          this.route.navigate(['/'])
-        })
+      this.setChampion();
     })
+  }
+
+  setChampion() {
+    this.apiService.getChampion(this.name).subscribe(
+      (res) => {
+        this.championData = res.json().data[this.name];
+        // console.log(this.championData)
+        this.isloading = false;
+      },
+      (err) => {
+        console.log('Champion request failed : ', err);
+        this.route.navigate(['/'])
+      })
   }
 }
